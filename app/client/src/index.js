@@ -1,6 +1,6 @@
 import { router, mount, el } from "../node_modules/redom/dist/redom.es";
 import { Header } from "./header.js";
-import { Home, HomePath } from "./home.js";
+import { Login, LoginPath } from "./login.js";
 import { About, AboutPath } from "./about.js";
 import { Contact, ContactPath } from "./contact.js";
 
@@ -10,14 +10,21 @@ let context = {
 };
 
 const app_router = router(".app", {
-  [HomePath]: new Home(context),
+  [LoginPath]: new Login(context),
   [AboutPath]: About,
   [ContactPath]: Contact,
 });
 
 context.router = app_router;
 
-mount(document.getElementById("main"), new Header(context));
-mount(document.getElementById("main"), app_router);
+mount(
+  document.getElementById("main"),
+  <div
+    className="d-flex justify-content-center align-items-center"
+    style="height: 100vh;"
+  >
+    {app_router}
+  </div>,
+);
 
-app_router.update(HomePath, context);
+app_router.update(LoginPath, context);

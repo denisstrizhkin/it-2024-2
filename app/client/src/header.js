@@ -1,5 +1,5 @@
 import { el } from "../node_modules/redom/dist/redom.es";
-import { HomePath } from "./home.js";
+import { LoginPath } from "./login.js";
 import { ContactPath } from "./contact.js";
 import { AboutPath } from "./about.js";
 
@@ -10,16 +10,16 @@ export class Header {
         <nav>
           <button
             type="button"
-            class="btn"
+            className="btn"
             onclick={() => {
-              context.router.update(HomePath, context);
+              context.router.update(LoginPath, context);
             }}
           >
             Home
           </button>
           <button
             type="button"
-            class="btn"
+            className="btn"
             onclick={() => {
               context.router.update(AboutPath, context);
             }}
@@ -28,7 +28,7 @@ export class Header {
           </button>
           <button
             type="button"
-            class="btn"
+            className="btn"
             onclick={() => {
               context.router.update(ContactPath, context);
             }}
