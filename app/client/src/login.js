@@ -1,5 +1,5 @@
 import { el, setAttr } from "../node_modules/redom/dist/redom.es";
-import { RegisterPath } from "./constants.js";
+import { RegisterPath, TasksPath } from "./constants.js";
 
 export class Login {
   constructor(context) {
@@ -56,6 +56,7 @@ export class Login {
     const data = Object.fromEntries(formData.entries());
 
     console.log("Form Data:", data);
+    this.context.router.update(TasksPath);
   };
 
   handleRegister = (event) => {

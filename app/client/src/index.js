@@ -1,8 +1,8 @@
 import { router, mount, el } from "../node_modules/redom/dist/redom.es";
 import { Login } from "./login.js";
 import { Register } from "./register.js";
-import { Tasks, TasksPath } from "./tasks.js";
-import { LoginPath, RegisterPath } from "./constants.js";
+import { Tasks } from "./tasks.js";
+import { LoginPath, RegisterPath, TasksPath } from "./constants.js";
 
 let context = {
   router: null,

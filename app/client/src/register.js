@@ -39,7 +39,7 @@ export class Register {
             Error
           </div>
           <button type="submit" className="btn btn-primary">
-            Login
+            Register
           </button>
         </form>
         <p className="text-center mt-2">
@@ -62,11 +62,12 @@ export class Register {
     const data = Object.fromEntries(formData.entries());
 
     console.log("Form Data:", data);
+    this.context.router.update(LoginPath);
   };
 
   handleRegister = (event) => {
     event.preventDefault();
-    this.context.router.update();
+    this.context.router.update(LoginPath);
   };
 
   update() {
