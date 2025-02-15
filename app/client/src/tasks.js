@@ -1,6 +1,6 @@
 import { el } from "../node_modules/redom/dist/redom.es";
 
-export class Task {
+class Task {
   constructor(name, end_date, urgency) {
     this.uuid = crypto.randomUUID();
     this.name = name;
@@ -35,6 +35,12 @@ export class Tasks {
         <td>{task.name}</td>
         <td>{task.end_date}</td>
         <td>{task.urgency}</td>
+        <td>
+          <i className="bi bi-pencil"></i>
+        </td>
+        <td>
+          <i className="bi bi-trash"></i>
+        </td>
       </tr>
     ));
   }
@@ -49,6 +55,8 @@ export class Tasks {
               <th>Task</th>
               <th>Date</th>
               <th>Severity</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>{this.generateRows()}</tbody>
