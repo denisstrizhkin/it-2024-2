@@ -1,8 +1,8 @@
 import { router, mount, el } from "../node_modules/redom/dist/redom.es";
-import { Header } from "./header.js";
-import { Login, LoginPath } from "./login.js";
-import { About, AboutPath } from "./about.js";
-import { Contact, ContactPath } from "./contact.js";
+import { Login } from "./login.js";
+import { Register } from "./register.js";
+import { Tasks, TasksPath } from "./tasks.js";
+import { LoginPath, RegisterPath } from "./constants.js";
 
 let context = {
   router: null,
@@ -11,8 +11,8 @@ let context = {
 
 const app_router = router(".app", {
   [LoginPath]: new Login(context),
-  [AboutPath]: About,
-  [ContactPath]: Contact,
+  [RegisterPath]: new Register(context),
+  [TasksPath]: new Tasks(context),
 });
 
 context.router = app_router;
@@ -27,4 +27,4 @@ mount(
   </div>,
 );
 
-app_router.update(LoginPath, context);
+app_router.update(LoginPath);

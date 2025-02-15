@@ -1,7 +1,7 @@
 import { el, setAttr } from "../node_modules/redom/dist/redom.es";
-import { RegisterPath } from "./constants.js";
+import { LoginPath } from "./constants.js";
 
-export class Login {
+export class Register {
   constructor(context) {
     this.context = context;
     this.el = (
@@ -28,6 +28,12 @@ export class Login {
               id="password"
               placeholder="Enter password"
             />
+            <input
+              type="password"
+              className="form-control mb-2"
+              id="password2"
+              placeholder="Repeat pasword"
+            />
           </div>
           <div id="error" className="alert alert-danger p-2 mb-2" role="alert">
             Error
@@ -37,8 +43,8 @@ export class Login {
           </button>
         </form>
         <p className="text-center mt-2">
-          <a className="link-underline" href="" onclick={this.handleRegister}>
-            Register
+          <a className="link-underline" href="">
+            Login
           </a>
         </p>
       </div>
@@ -60,7 +66,7 @@ export class Login {
 
   handleRegister = (event) => {
     event.preventDefault();
-    this.context.router.update(RegisterPath);
+    this.context.router.update();
   };
 
   update() {

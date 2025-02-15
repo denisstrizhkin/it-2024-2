@@ -1,9 +1,10 @@
 import { el } from "../node_modules/redom/dist/redom.es";
 
-export const AboutPath = "about";
+export const TasksPath = "tasks";
 
-export class About {
-  constructor() {
+export class Tasks {
+  constructor(context) {
+    this.context = context;
     this.el = (
       <div>
         <h1>About Us</h1>
@@ -11,7 +12,7 @@ export class About {
       </div>
     );
   }
-  update(context) {
-    console.log(context);
+  update() {
+    console.log(this.context);
   }
 }
