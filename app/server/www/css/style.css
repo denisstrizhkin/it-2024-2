@@ -1,0 +1,10 @@
+.invalid-feedback {
+  display: block;
+  visibility: hidden;
+  padding-right: calc(1.5em + 0.75rem);
+}
+
+.is-invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-feedback {
+  visibility: visible;
+}
