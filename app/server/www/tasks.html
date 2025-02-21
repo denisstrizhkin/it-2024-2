@@ -9,13 +9,78 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="d-flex flex-column vh-100">
-      <header class="shadow flex-shrink-0 p-2">
+    <div class="d-flex flex-column min-vh-100">
+      <header class="flex-shrink-0 shadow p-2">
         <h1 class="text-center">Tasks</h1>
       </header>
-      <div
-        class="flex-grow-1 d-flex justify-content-center align-items-center"
-      ></div>
+      <div class="flex-fill d-flex justify-content-center align-items-center">
+        <div class="table-responsive shadow my-3">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Severity</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Complete Project Proposal</td>
+                <td>2023-10-15</td>
+                <td class="text-center">
+                  <i class="bi bi-exclamation-circle-fill text-secondary"></i>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-outline-secondary"
+                    title="Change"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" title="Delete">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Buy Groceries</td>
+                <td>2023-10-10</td>
+                <td class="text-center"></td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-outline-secondary"
+                    title="Change"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" title="Delete">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Call Client</td>
+                <td>2023-10-12</td>
+                <td class="text-center">
+                  <i class="bi bi-exclamation-circle-fill text-secondary"></i>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-outline-secondary"
+                    title="Change"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" title="Delete">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
