@@ -1,70 +1,53 @@
-import { el, setAttr } from "../node_modules/redom/dist/redom.es";
-import { RegisterPath, TasksPath } from "./constants.js";
+import { mount, el } from "../node_modules/redom/dist/redom.es";
 
 export class Login {
-  constructor(context) {
-    this.context = context;
+  constructor() {
     this.el = (
-      <div>
-        <form
-          id="form"
-          className="d-flex flex-column justify-content-center"
-          onsubmit={this.handleSubmit}
-        >
-          <div className="form-group">
-            <label for="email">Email address</label>
-            <input
-              type="email"
-              className="form-control mb-2"
-              id="email"
-              placeholder="Enter email"
-            />
-          </div>
-          <div className="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              className="form-control mb-2"
-              id="password"
-              placeholder="Enter password"
-            />
-          </div>
-          <div id="error" className="alert alert-danger p-2 mb-2" role="alert">
-            Error
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-        </form>
-        <p className="text-center mt-2">
-          <a className="link-underline" href="" onclick={this.handleRegister}>
-            Register
-          </a>
-        </p>
+      <div className="card shadow my-3">
+        <div className="card-body">
+          <h3 className="card-title text-center mb-4 mt-4">Login</h3>
+          <form className="needs-validation" novalidate>
+            <div className="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Enter email"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid email.
+              </div>
+            </div>
+            <div className="form-group mt-1">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="Enter password"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid password.
+              </div>
+            </div>
+            <div className="d-grid mt-2 mb-2">
+              <button type="submit" className="btn btn-primary">
+                Sign in
+              </button>
+            </div>
+          </form>
+          <p className="text-center">
+            <a className="link-underline" href="">
+              First time? Create an account.
+            </a>
+          </p>
+        </div>
       </div>
     );
   }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    console.log(formData);
-    for (const pair of formData.entries()) {
-      console.log(pair[0], pair[1]);
-    }
-    const data = Object.fromEntries(formData.entries());
-
-    console.log("Form Data:", data);
-    this.context.router.update(TasksPath);
-  };
-
-  handleRegister = (event) => {
-    event.preventDefault();
-    this.context.router.update(RegisterPath);
-  };
-
-  update() {
-    console.log(this.context);
-  }
 }
+
+mount(document.getElementById("main"), <Login />);

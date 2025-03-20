@@ -1,5 +1,5 @@
 import babel from "@rollup/plugin-babel";
-const pages = ["index.js"];
+const pages = ["index.js", "login.js"];
 
 const pluginList = [babel({ babelHelpers: "bundled" })];
 const export_page = pages.reduce((acc, item) => {
